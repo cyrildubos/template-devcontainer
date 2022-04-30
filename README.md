@@ -5,7 +5,7 @@
 On the host machine, install NVIDIA Container Toolkit package:
 
 ```console
-pacman -S nvidia-container-toolkit
+yay -S nvidia-container-toolkit
 ```
 
 ### With a laptop as the host machine
