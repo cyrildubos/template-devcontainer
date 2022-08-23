@@ -2,15 +2,14 @@
     "name": "Arch Linux",
     "image": "archlinux",
     "containerEnv": {
-        "DISPLAY": ":1" // X11 forwarding
+        "DISPLAY": ":1"     // X11 forwarding
     },
-    "mounts": [
-        "type=bind,source=/dev/bus/usb,target=/dev/bus/usb",    // USB passthrough 
-        "type=bind,source=/tmp/.X11-unix,target=/tmp/.X11-unix" // X11 forwarding
+    "mounts": [ 
+        "type=bind,source=/tmp/.X11-unix,target=/tmp/.X11-unix",    // X11 forwarding
+        "type=bind,source=/dev/bus/usb,target=/dev/bus/usb"         // USB passthrough
     ],
     "runArgs": [
-        "--gpus=all",                // NVIDIA Container Toolkit
-        "--privileged",              // USB passthrough 
-        "--device=/dev/dri:/dev/dri" // (OpenGL) 
+        "--privileged",     // USB passthrough
+        "--gpus=all"        // NVIDIA Container Toolkit
     ]
 }
