@@ -10,16 +10,12 @@
             "source": "/tmp/.X11-unix",
             "target": "/tmp/.X11-unix",
             "type": "bind"
-        },
-        // USB passthrough
-        {
-            "source": "/dev/bus/usb",
-            "target": "/dev/bus/usb",
-            "type": "bind"
         }
     ],
     "runArgs": [
-        "--privileged",     // USB passthrough
-        "--gpus=all"        // NVIDIA Container Toolkit
+        "--gpus=all",               // NVIDIA Container Toolkit
+        "--privileged",             // USB passthrough
+        "--device=/dev/bus/usb",    // USB passthrough
+        "--device=/dev/snd"         // Advanced Linux Sound Architecture (ALSA)
     ]
 }
