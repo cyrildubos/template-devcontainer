@@ -5,8 +5,18 @@
         "DISPLAY": ":1"     // X11 forwarding
     },
     "mounts": [ 
-        "type=bind,source=/tmp/.X11-unix,target=/tmp/.X11-unix",    // X11 forwarding
-        "type=bind,source=/dev/bus/usb,target=/dev/bus/usb"         // USB passthrough
+        // X11 forwarding
+        {
+            "source": "/tmp/.X11-unix",
+            "target": "/tmp/.X11-unix",
+            "type": "bind"
+        },
+        // USB passthrough
+        {
+            "source": "/dev/bus/usb",
+            "target": "/dev/bus/usb",
+            "type": "bind"
+        }
     ],
     "runArgs": [
         "--privileged",     // USB passthrough
