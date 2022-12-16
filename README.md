@@ -1,6 +1,6 @@
 # Template - Dev Container
 
-A Devcontainer template for Arch Linux, X11, Nvidia, and more...
+A Dev Container template for Arch Linux, X11, Nvidia, and more...
 
 ## NVIDIA Container Toolkit
 
